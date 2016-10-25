@@ -1,11 +1,9 @@
 var sonnet = document.querySelector('.sonnet').innerText;
-  var wordCounter = {
-
-};
-  var counter = strSplit(sonnet).forEach(function(count) {
+  var wordCounter = {};
+  var counter = strSplit(sonnet).forEach(function countNum(count) {
   wordCounter[count] = (wordCounter[count]||0)+1;
  });
-  function strSplit(stringToSplit) {
+ function strSplit(stringToSplit) {
     var arrayString = stringToSplit.split(' ');
     return arrayString;
   }
