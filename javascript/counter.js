@@ -1,22 +1,12 @@
-var wordCounter = {
-  sonnet: document.querySelector('.sonnet').innerText
+var sonnet = document.querySelector('.sonnet').innerText;
+  var wordCounter = {
 
 };
-
-
-var sonnet = document.querySelector('.sonnet').innerText
-
-var string = sonnet;
+  var counter = strSplit(sonnet).forEach(function(count) {
+  wordCounter[count] = (wordCounter[count]||0)+1;
+ });
   function strSplit(stringToSplit) {
     var arrayString = stringToSplit.split(' ');
-    console.log(arrayString);
+    return arrayString;
   }
-
-  strSplit(sonnet);
-
-
-
-// function epic(str) {
-//     return str.replace(/[^qwertyiuopasdfghjklzxcvbnm " "]/gi, ' ');
-// }
-// console.log(epic(sonnet));
+console.log(wordCounter);
