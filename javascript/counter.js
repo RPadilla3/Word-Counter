@@ -1,12 +1,25 @@
 (function() {
-var sonnet = document.querySelector('.sonnet').innerText;
-  var wordCounter = {};
-  var counter = strSplit(sonnet).forEach(function countNum(count) {
-  wordCounter[count] = (wordCounter[count]||0)+1;
- });
- function strSplit(stringToSplit) {
-    var arrayString = stringToSplit.split(' ');
-    return arrayString;
-  }
-console.log(wordCounter);
-})();
+    'use strict';
+
+    var sonnet = document.querySelector('.sonnet').innerText;
+
+    function wordFrequency(stringOfWords) {
+        var frequency = {};
+        var splitString = stringOfWords.split(' ');
+
+        splitString.forEach(function count(word) {
+
+            if (word.length > 1) {
+                if (frequency[word] === undefined) {
+                    frequency[word] = 1;
+                } else {
+                    frequency[word]++;
+                }
+            }
+        });
+        return frequency;
+    }
+    var result = wordFrequency(sonnet);
+    console.log(result);
+
+}());
